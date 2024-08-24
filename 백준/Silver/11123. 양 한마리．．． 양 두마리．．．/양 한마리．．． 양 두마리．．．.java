@@ -27,9 +27,9 @@ public class Main {
             map = new int[H+1][M+1];
             visited = new boolean[H+1][M+1];
 
-            for (int i = 0; i < H; ++i) {
+            for (int i = 0; i < H; i++) {
                 String str = br.readLine();
-                for (int j = 0; j < M; ++j) {
+                for (int j = 0; j < M; j++) {
                     if(str.charAt(j) == '#'){
                         map[i][j] = 1;
                     }else{
@@ -38,8 +38,8 @@ public class Main {
                 }
             }
 
-            for (int i = 0; i < H; ++i) {
-                for (int j = 0; j < M; ++j) {
+            for (int i = 0; i < H; i++) {
+                for (int j = 0; j < M; j++) {
                     if(map[i][j] == 1 && !visited[i][j]){
                         BFS(i, j);
                         answer++;
@@ -61,7 +61,7 @@ public class Main {
             int[] arr = q.poll();
             int al = arr[0] , ar = arr[1];
 
-            for (int i = 0; i < 4; ++i) {
+            for (int i = 0; i < 4; i++) {
                 int nx = al + dx[i];
                 int ny = ar + dy[i];
 
