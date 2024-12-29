@@ -1,19 +1,21 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 class Solution {
-    public static String solution(String[] participant, String[] completion) {
+    public String solution(String[] participant, String[] completion) {
         Arrays.sort(participant);
         Arrays.sort(completion);
         
-        int i;
-        for (i = 0; i < completion.length; i++) {
+        String answer = "";
+        
+        for(int i = 0; i < completion.length; i++){
+            
             if(!participant[i].equals(completion[i])){
-                return participant[i];
+                answer = participant[i];
+                return answer;
             }
+            
         }
-
-        return participant[i];
+        answer = participant[participant.length - 1];
+        return answer;
     }
 }
